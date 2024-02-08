@@ -34,6 +34,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.zzw</groupId>
+            <artifactId>guli-mall-common</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -53,7 +57,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
-                    <mainClass>com.example.gulimall.GuliMallMemberApplication</mainClass>
+                    <mainClass>com.zzw.gulimall.GuliMallMemberApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

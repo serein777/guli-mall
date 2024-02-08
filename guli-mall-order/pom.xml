@@ -33,6 +33,10 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>com.zzw</groupId>
+            <artifactId>guli-mall-common</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

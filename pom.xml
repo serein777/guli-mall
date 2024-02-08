@@ -5,7 +5,10 @@
     <groupId>com.zzw</groupId>
     <artifactId>guli-mall</artifactId>
     <version>${revision}</version>
-    <name>guli-mallt</name>
+    <modules>
+        <module>guli-mall-common</module>
+    </modules>
+    <name>guli-mall</name>
     <description>guli-mall</description>
     <packaging>pom</packaging>
     <properties>
@@ -17,6 +20,7 @@
         <revision>1.0-SNAPSHOT</revision>
     </properties>
     <dependencyManagement>
+        <!--内部依赖-->
         <dependencies>
             <dependency>
                 <groupId>com.zzw</groupId>
@@ -26,6 +30,26 @@
             <dependency>
                 <groupId>com.zzw</groupId>
                 <artifactId>guli-mall-order</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zzw</groupId>
+                <artifactId>guli-mall-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zzw</groupId>
+                <artifactId>guli-mall-member</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zzw</groupId>
+                <artifactId>guli-mall-common</artifactId>
+                <version>${revision}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.zzw</groupId>
+                <artifactId>guli-mall-ware</artifactId>
                 <version>${revision}</version>
             </dependency>
             <dependency>
@@ -41,6 +65,11 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0-RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -103,6 +132,10 @@
                 <module>guli-mall-member</module>
                 <module>guli-mall-order</module>
                 <module>guli-mall-product</module>
+                <module>guli-mall-coupon</module>
+                <module>guli-mall-ware </module>
+                <module>guli-mall-common</module>
+                <module>renren-fast</module>
             </modules>
         </profile>
     </profiles>
