@@ -8,7 +8,10 @@ spring:
     password: root
   application:
     name: mall-coupon
-
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 mybatis-plus:
   configuration:
     #数据库下划线和实体类驼峰统一

@@ -2,14 +2,15 @@ package com.zzw.gulimall;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
 @EnableDiscoveryClient
-public class GuliMallCouponApplication {
+public class GuliMallGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(GuliMallCouponApplication.class, args);
+        SpringApplication.run(GuliMallGatewayApplication.class, args);
     }
 
 }

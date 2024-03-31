@@ -3,7 +3,10 @@ package com.zzw.gulimall.member.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.zzw.gulimall.member.feign.CouponFeignService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,9 +29,41 @@ import com.zzw.gulimall.common.utils.R;
  */
 @RestController
 @RequestMapping("member/member")
+@RefreshScope
 public class MemberController {
     @Autowired
     private MemberService memberService;
+
+    @Autowired
+    private CouponFeignService couponFeignService;
+
+    @Value("${member.user.age}")
+    private Integer age;
+
+    @Value("${member.user.name}")
+    private String userName;
+
+
+    @RequestMapping("/info")
+    public R userInfoV1(){
+        return  R.ok().put("name",userName).put("age",age);
+    }
+
+//    @RequestMapping("/coupons")
+//    public R userInfo(){
+//        MemberEntity member = new MemberEntity();
+//        member.setNickname("千空");
+//        R coupon = couponFeignService.memberCoupon();
+//        return   R.ok().put("member",member).put("coupons",coupon.get("coupons"));
+//    }
+
+    @RequestMapping("coupons")
+    public R memberCoupons(){
+        MemberEntity member = new MemberEntity();
+        member.setNickname("千空");
+        R coupon = couponFeignService.memberCoupon();
+       return   R.ok().put("member",member).put("coupons",coupon.get("coupons"));
+    }
 
     /**
      * 列表

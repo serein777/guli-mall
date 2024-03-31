@@ -1,7 +1,6 @@
 package com.zzw.gulimall.product.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zzw.common.utils.PageUtils;
 import com.zzw.gulimall.product.entity.SkuImagesEntity;
 import com.zzw.gulimall.common.utils.PageUtils;
 

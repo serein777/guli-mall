@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mall-member
+  cloud:
+    nacos:
+      config:
+        enabled: true # ?????? Nacos ?????????? false ??
+        server-addr: 127.0.0.1:8848 # Nacos Server ??
+#        group: DEFAULT_GROUP # ????? DEFAULT_GROUP
+        file-extension: yaml # ????????????? properties
+        namespace: 64539743-8497-4b5f-aa8c-e60b293757cf
+        extension-configs:
+          - data-id: dataSource.yaml
+            refresh: true
+            group: dev
+          - data-id: mybatis.yaml
+            refresh: true
+            group: dev
+          - data-id: other.yaml
+            refresh: true
+            group: dev

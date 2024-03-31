@@ -1,11 +1,17 @@
 server:
   port: 11000
 spring:
-  driverClassName: com.mysql.cj.jdbc.Driver
-  url: jdbc:mysql://192.168.56.101:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
-  username: root
-  password: root
-
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.56.101:3306/gulimall_wms?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+  application:
+    name: mall-ware
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 mybatis-plus:
   configuration:
     #数据库下划线和实体类驼峰统一

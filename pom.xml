@@ -5,9 +5,6 @@
     <groupId>com.zzw</groupId>
     <artifactId>guli-mall</artifactId>
     <version>${revision}</version>
-    <modules>
-        <module>guli-mall-common</module>
-    </modules>
     <name>guli-mall</name>
     <description>guli-mall</description>
     <packaging>pom</packaging>
@@ -65,11 +62,6 @@
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>2.1.0-RELEASE</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
